@@ -2,7 +2,7 @@ import xlrd
 import pandas as pd
 from datetime import datetime
 
-data_atual = datetime.now().strftime('%d_%m_%y') # Data atual para renomear a nova planilha
+data_atual = datetime.now().strftime('%d_%m_%y')  # Data atual para renomear a nova planilha
 
 sheetwork_necessidade_compra_tiny = 'necessidade-compra_31-01-2025-09-15-41.xls'
 sheetwork_estoque_geral_full = 'stock_general_full_31081638_615e6c642c50da1ac8e5b8abdd671ef9.xlsx'
@@ -13,7 +13,6 @@ workbook = df_estoque_tiny_geral.sheet_by_index(0)
 
 ColunaSKUFull = df_full.iloc[14:, 3]
 ColunaQTDEstoque = df_full.iloc[14:, 19]
-EntradaPendente = df_full.iloc[14:, 20]
 
 Rows = workbook.nrows
 Estoque_Full = {}
@@ -27,8 +26,8 @@ WorkNewCompras = {
     'Sugestão de Compras': [],
 }
 
-for x, y, z in zip(ColunaSKUFull, ColunaQTDEstoque, EntradaPendente):
-    Estoque_Full[x] = y - z
+for x, y in zip(ColunaSKUFull, ColunaQTDEstoque):
+    Estoque_Full[x] = y
 
 for row in range(1, Rows):
     estoque_full = 0

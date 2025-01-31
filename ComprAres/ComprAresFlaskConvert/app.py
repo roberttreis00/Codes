@@ -45,7 +45,6 @@ def process_files(file1, file2):
 
     ColunaSKUFull = df_full.iloc[14:, 3]
     ColunaQTDEstoque = df_full.iloc[14:, 19]
-    EntradaPendente = df_full.iloc[14:, 20]
 
     Rows = workbook.nrows
     Estoque_Full = {}
@@ -59,8 +58,8 @@ def process_files(file1, file2):
         'Sugestão de Compras': [],
     }
 
-    for x, y, z in zip(ColunaSKUFull, ColunaQTDEstoque, EntradaPendente):
-        Estoque_Full[x] = y - z
+    for x, y in zip(ColunaSKUFull, ColunaQTDEstoque):
+        Estoque_Full[x] = y
 
     for row in range(1, Rows):
         estoque_full = 0

@@ -1,0 +1,16 @@
+Projeto ComprAres1.0
+
+- Site que a pessoa envia as duas planilhas e retorna a planilha formatada
+
+Planilha com ESTOQUE_TINY - EstoqueFisico
+    Filtro de estoque: Produtos com saldo diferente de zero
+Planilha com Estoque_Full - EstoqueFull
+Planilha com Necessidade de Compras - Qtd Vendas do periodo
+
+Formulario
+    Marca
+    Periodo de meses
+
+API para pegar um JSON do Saldo em Estoque
+API para gerar o relatorio de necessidade de compras
+API para pegar o saldo estoque do Full
