@@ -59,8 +59,8 @@ def process_files(file1, file2):
         'Sugestão de Compras': [],
     }
 
-    for x, y in zip(ColunaSKUFull, ColunaQTDEstoque):
-        Estoque_Full[x] = y
+    for x, y, z in zip(ColunaSKUFull, ColunaQTDEstoque, EntradaPendente):
+        Estoque_Full[x] = y - z
 
     for row in range(1, Rows):
         estoque_full = 0
@@ -70,7 +70,7 @@ def process_files(file1, file2):
         saidas_periodo = int(workbook.cell(row, 9).value)
 
         try:
-            estoque_full = Estoque_Full[sku_tiny] - EntradaPendente
+            estoque_full = Estoque_Full[sku_tiny]
             quantidade_disponivel = estoque_virtual + estoque_full
             sugestao_compra = saidas_periodo - quantidade_disponivel
         except KeyError:
