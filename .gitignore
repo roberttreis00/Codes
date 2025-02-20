@@ -1,4 +1,6 @@
 OraculoEngine2/README.txt
+ComprAres/Stand/ConsultaSKUapi.py
+OraculoEngine2/ConsultaAPINetshoes.py
 .env
 .idea
 *.xls
